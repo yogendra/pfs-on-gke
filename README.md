@@ -362,11 +362,39 @@ Lets create a simple function that will reture square of a number. We will use c
 
   ```
 
-  > **Note:** You can experience a delay in your execution on the first try
+- Lets create some load and see what happens
+
+  ```
+  > for i in {1..1000}; do curl -H "content-type:application/json" -X POST http://square.default.functions.runs-on.cf -d "$i" ; done
+  ```
+
+  Lets examine the logs in functiun pod. First, findout pod.
+
+  ```
+  > kubectl get pods -l riff.projectriff.io/function=square
+  NAME                                       READY   STATUS        RESTARTS   AGE
+  square-bwbwn-deployment-79d9688fd4-rtg9c   2/3     Terminating   0          4m53s
+
+  ```
+
+  Next, get logs from the pod's `user-container` container
+
+  ```
+  > kubectl logs pods/square-bwbwn-deployment-79d9688fd4-rtg9c -c user-container
+
+  ```
+
+  Or do it in one go
+
+  ```
+  > kubectl logs $(kubectl get pods -l riff.projectriff.io/function=square -o jsonpath='{.items[0].metadata.name}') -c user-container
+  ```
+
+> **Note:** You can experience a delay in your execution on the first try
 
 ### Second function : Uppercase in Java
 
-- Create a function from [git repo]()
+- Create a function from [git repo](https://github.com/projectriff-samples/java-boot-uppercase.git)
 
   ```
 
@@ -394,6 +422,134 @@ Lets create a simple function that will reture square of a number. We will use c
   > curl http://uppercase.default.functions.runs-on.cf -H 'Content-Type: text/plain' -w '\n' -d 'welcome to pfs'
   WELCOME TO PFS
   ```
+
+### Third Function: Cube in Local Javascript
+
+So far we have only used git based project to create functions. Lets create a function from a file on local machine
+
+- Create a function
+
+  ```
+  > pfs function create cube --artifact index.js --local-path samples/cube
+  ```
+
+  <details>
+    <summary>Output</summary>
+    <p>
+
+      Applied default --image="gcr.io/pa-yrampuria/cube"
+      Using user-provided builder image docker.io/projectriff/builder@sha256:dccac174b2e80186aab20ed3a52a61e8a69d6c023e16f45c53c6385d7f5b5c4c
+      Pulling builder image docker.io/projectriff/builder@sha256:dccac174b2e80186aab20ed3a52a61e8a69d6c023e16f45c53c6385d7f5b5c4c (use --no-pull flag to skip this step)
+      sha256:dccac174b2e80186aab20ed3a52a61e8a69d6c023e16f45c53c6385d7f5b5c4c: Pulling from projectriff/builder
+      898c46f3b1a1: Already exists
+      63366dfa0a50: Already exists
+      041d4cd74a92: Already exists
+      6e1bee0f8701: Already exists
+      736a2f2678d0: Pull complete
+      c14514b920d6: Pull complete
+      4e1c50360d2b: Pull complete
+      3091b80d6304: Pull complete
+      c2cb47c11953: Pull complete
+      3982579fd5a8: Pull complete
+      531565c98c9c: Pull complete
+      13b848540f6a: Pull complete
+      69d1a5f060c5: Pull complete
+      b55ffc638af0: Pull complete
+      0ffc444ee6be: Pull complete
+      66e517d5f297: Pull complete
+      aee2cd7e2ed2: Pull complete
+      93c91f1b7d68: Pull complete
+      a9c407174383: Pull complete
+      e2ea1ee3ddf3: Pull complete
+      30d2e8cfec82: Pull complete
+      Digest: sha256:dccac174b2e80186aab20ed3a52a61e8a69d6c023e16f45c53c6385d7f5b5c4c
+      Status: Downloaded newer image for projectriff/builder@sha256:dccac174b2e80186aab20ed3a52a61e8a69d6c023e16f45c53c6385d7f5b5c4c
+      Using user-provided run image docker.io/packs/run@sha256:99dee5262498d21b302321fd5d7b889c1685bfbd0ea12a64f786d91232e52278
+      Using cache image pack-cache-ab01782db352
+      ===> DETECTING
+      [detector] Trying group of 3...
+      [detector] ======== Results ========
+      [detector] Cloud Foundry OpenJDK Buildpack: pass
+      [detector] Cloud Foundry Build System Buildpack: skip
+      [detector] Java Function Buildpack: fail
+      [detector] Trying group of 3...
+      [detector] ======== Output: NPM Buildpack ========
+      [detector] no "package.json" found at: /workspace/package.json
+      [detector] ======== Results ========
+      [detector] Node.js Buildpack: pass
+      [detector] NPM Buildpack: skip
+      [detector] Node Function Buildpack: pass
+      ===> RESTORING
+      [restorer] cache image 'pack-cache-ab01782db352' not found, nothing to restore
+      ===> ANALYZING
+      [analyzer] WARNING: image 'gcr.io/pa-yrampuria/cube' not found or requires authentication to access
+      [analyzer] WARNING: image 'gcr.io/pa-yrampuria/cube' has incompatible 'io.buildpacks.lifecycle.metadata' label
+      ===> BUILDING
+      [builder] -----> Node.js Buildpack 0.0.4
+      [builder] -----> NodeJS 11.9.0: Contributing to layer
+      [builder]        Downloading from https://nodejs.org/dist/v11.9.0/node-v11.9.0-linux-x64.tar.gz
+      [builder]        Verifying checksum
+      [builder]        Expanding to /layers/org.cloudfoundry.buildpacks.nodejs/node
+      [builder]        Writing NODE_HOME to shared
+      [builder]        Writing NODE_ENV to shared
+      [builder]        Writing NODE_MODULES_CACHE to shared
+      [builder]        Writing NODE_VERBOSE to shared
+      [builder]        Writing NPM_CONFIG_PRODUCTION to shared
+      [builder]        Writing NPM_CONFIG_LOGLEVEL to shared
+      [builder]        Writing WEB_MEMORY to shared
+      [builder]        Writing WEB_CONCURRENCY to shared
+      [builder]
+      [builder] -----> Node Function Buildpack 0.1.0
+      [builder] -----> riff Node Invoker 0.1.0: Contributing to layer
+      [builder]        Reusing cached download from buildpack
+      [builder]        Expanding to /layers/io.projectriff.node/riff-invoker-node
+      [builder]        npm-installing the node invoker
+      [builder] added 76 packages from 60 contributors and audited 524 packages in 6.86s
+      [builder] found 10 vulnerabilities (2 moderate, 8 high)
+      [builder]   run `npm audit fix` to fix them, or `npm audit` for details
+      [builder]        Writing HOST to launch
+      [builder]        Writing HTTP_PORT to launch
+      [builder] -----> NodeJS index.js: Contributing to layer
+      [builder]        Writing FUNCTION_URI to launch
+      [builder] -----> Process types:
+      [builder]        web:      node /layers/io.projectriff.node/riff-invoker-node/server.js
+      [builder]        function: node /layers/io.projectriff.node/riff-invoker-node/server.js
+      [builder]
+      ===> EXPORTING
+      [exporter] WARNING: image 'gcr.io/pa-yrampuria/cube' not found or requires authentication to access
+      [exporter] WARNING: image 'gcr.io/pa-yrampuria/cube' has incompatible 'io.buildpacks.lifecycle.metadata' label
+      [exporter] adding layer 'app' with diffID 'sha256:8618f252927a67b4856d338bf0b45006a19f5c0db58efd85f60cf7b3af84364e'
+      [exporter] adding layer 'config' with diffID 'sha256:cf44337980f6134288892bb30effa9049e9c54a409ebbca9cc978fbc83ca6269'
+      [exporter] adding layer 'launcher' with diffID 'sha256:7417c05f2e27d60b777911b95a538f0bac23fec8fec4175a499039949781fabc'
+      [exporter] adding layer 'org.cloudfoundry.buildpacks.nodejs:node' with diffID 'sha256:52c3a02d18e4ead68628d5d5fcb833f54b7005bf925c71f40aa17a438949d431'
+      [exporter] adding layer 'io.projectriff.node:function' with diffID 'sha256:a61aa100d7f7853143a51bad4814dfc5d5f4c05d0375be41875867fa86c0de7a'
+      [exporter] adding layer 'io.projectriff.node:riff-invoker-node' with diffID 'sha256:ecd4fdde719a81c8273904aa4f3d22ad79384380c5c3c7c38406d267b6c7672d'
+      [exporter] setting metadata label 'io.buildpacks.lifecycle.metadata'
+      [exporter] setting env var 'CNB_LAYERS_DIR=/layers'
+      [exporter] setting env var 'CNB_APP_DIR=/workspace'
+      [exporter] setting entrypoint '/lifecycle/launcher'
+      [exporter] setting empty cmd
+      [exporter] writing image
+      [exporter]
+      [exporter] *** Image: gcr.io/pa-yrampuria/cube@sha256:5a7fd1768dfa0c9172218e6c2c71663f2196a6ad9c565e5c20e3fc0559a6b5e6
+      ===> CACHING
+      [cacher] WARNING: image 'pack-cache-ab01782db352' not found or requires authentication to access
+      [cacher] WARNING: image 'pack-cache-ab01782db352' has incompatible 'io.buildpacks.lifecycle.cache.metadata' label
+      [cacher] adding layer 'org.cloudfoundry.buildpacks.nodejs:0e872c288724e7de72eaa89d1fbc29979a60cdc8c4c0bc1ea65339328bbaaf4c' with diffID 'sha256:18acead142fd52c49704a97bfdfee2f64191abb089ed3a9c805cd4d9180d0235'
+      [cacher] adding layer 'org.cloudfoundry.buildpacks.nodejs:node' with diffID 'sha256:52c3a02d18e4ead68628d5d5fcb833f54b7005bf925c71f40aa17a438949d431'
+      [cacher] setting metadata label 'io.buildpacks.lifecycle.cache.metadata'
+      [cacher] writing image
+      [cacher] cache 'pack-cache-ab01782db352@0cc8f685b346221e4ea4a21bd005ae3031a2af27d59ca5dd475954f672ac284e'
+
+      pfs function create completed successfully
+      Issue `pfs service status cube` to see the status of the function
+
+  </p>
+  </details>
+
+  This is building your code using Cloud Native buildpacks. It detects your application type automaticaly and runs the correct buildpack.
+
+-
 
 ## References
 
