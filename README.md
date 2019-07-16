@@ -117,148 +117,140 @@
     <details>
     <summary>Output</summary>  
     <p>
-
-  ```
-    NAMESPACE          NAME                                                 READY   STATUS    RESTARTS   AGE
-    istio-system       cluster-local-gateway-5cdcbc79b9-9wfp6               1/1     Running   0          3m54s
-    istio-system       istio-citadel-84cc99697d-hnwp2                       1/1     Running   0          4m42s
-    istio-system       istio-egressgateway-78db6584df-pg8dr                 1/1     Running   0          2m53s
-    istio-system       istio-egressgateway-78db6584df-pm2c8                 1/1     Running   0          4m46s
-    istio-system       istio-galley-68cc49fd79-n4g5w                        1/1     Running   0          4m47s
-    istio-system       istio-ingressgateway-6998857944-dvtzt                1/1     Running   0          4m45s
-    istio-system       istio-pilot-86977d94ff-bd7h2                         2/2     Running   0          4m43s
-    istio-system       istio-policy-75859d6946-bc84c                        2/2     Running   0          4m44s
-    istio-system       istio-sidecar-injector-8458476f-rzbbc                1/1     Running   0          4m41s
-    istio-system       istio-telemetry-8586d55cf4-5d7wx                     2/2     Running   0          4m43s
-    knative-build      build-controller-7698746755-7b564                    1/1     Running   0          3m12s
-    knative-build      build-webhook-6794b58fc-mkpng                        1/1     Running   0          3m12s
-    knative-eventing   eventing-controller-88998bdf6-fq89d                  1/1     Running   0          2m49s
-    knative-eventing   in-memory-channel-controller-5d8986dcfb-8t8jg        1/1     Running   0          2m43s
-    knative-eventing   in-memory-channel-dispatcher-6cd8fdc44f-smrmf        2/2     Running   2          2m42s
-    knative-eventing   webhook-85d8bd7bd4-p5sxj                             1/1     Running   0          2m49s
-    knative-serving    activator-6f8b98d989-npkgm                           2/2     Running   0          3m2s
-    knative-serving    autoscaler-69f6cc479c-dz4sr                          2/2     Running   0          3m1s
-    knative-serving    controller-66f594ddf7-mwjfv                          1/1     Running   0          2m56s
-    knative-serving    webhook-546765cbbf-nt9c7                             1/1     Running   0          2m55s
-    kube-system        event-exporter-v0.2.4-5f88c66fb7-gj8wr               2/2     Running   0          11m
-    kube-system        fluentd-gcp-scaler-59b7b75cd7-75lhp                  1/1     Running   0          10m
-    kube-system        fluentd-gcp-v3.2.0-6b8sx                             2/2     Running   0          10m
-    kube-system        fluentd-gcp-v3.2.0-gwk8j                             2/2     Running   0          10m
-    kube-system        fluentd-gcp-v3.2.0-vtxff                             2/2     Running   0          10m
-    kube-system        heapster-v1.6.0-beta.1-657d484f75-cgslh              3/3     Running   0          10m
-    kube-system        kube-dns-6987857fdb-pcpc4                            4/4     Running   0          11m
-    kube-system        kube-dns-6987857fdb-v7hhg                            4/4     Running   0          10m
-    kube-system        kube-dns-autoscaler-bb58c6784-pww2k                  1/1     Running   0          10m
-    kube-system        kube-proxy-gke-pfs-demo-default-pool-6426a8ba-0jcl   1/1     Running   0          10m
-    kube-system        kube-proxy-gke-pfs-demo-default-pool-6426a8ba-0l9n   1/1     Running   0          10m
-    kube-system        kube-proxy-gke-pfs-demo-default-pool-6426a8ba-cbw5   1/1     Running   0          10m
-    kube-system        l7-default-backend-fd59995cd-jtcsp                   1/1     Running   0          11m
-    kube-system        metrics-server-v0.3.1-57c75779f-zfwmf                2/2     Running   0          10m
-    kube-system        prometheus-to-sd-2gssk                               1/1     Running   0          10m
-    kube-system        prometheus-to-sd-69lwl                               1/1     Running   0          10m
-    kube-system        prometheus-to-sd-s2vqt                               1/1     Running   0          10m
-
-  ```
-
+    
+      NAMESPACE          NAME                                                 READY   STATUS    RESTARTS   AGE
+      istio-system       cluster-local-gateway-5cdcbc79b9-9wfp6               1/1     Running   0          3m54s
+      istio-system       istio-citadel-84cc99697d-hnwp2                       1/1     Running   0          4m42s
+      istio-system       istio-egressgateway-78db6584df-pg8dr                 1/1     Running   0          2m53s
+      istio-system       istio-egressgateway-78db6584df-pm2c8                 1/1     Running   0          4m46s
+      istio-system       istio-galley-68cc49fd79-n4g5w                        1/1     Running   0          4m47s
+      istio-system       istio-ingressgateway-6998857944-dvtzt                1/1     Running   0          4m45s
+      istio-system       istio-pilot-86977d94ff-bd7h2                         2/2     Running   0          4m43s
+      istio-system       istio-policy-75859d6946-bc84c                        2/2     Running   0          4m44s
+      istio-system       istio-sidecar-injector-8458476f-rzbbc                1/1     Running   0          4m41s
+      istio-system       istio-telemetry-8586d55cf4-5d7wx                     2/2     Running   0          4m43s
+      knative-build      build-controller-7698746755-7b564                    1/1     Running   0          3m12s
+      knative-build      build-webhook-6794b58fc-mkpng                        1/1     Running   0          3m12s
+      knative-eventing   eventing-controller-88998bdf6-fq89d                  1/1     Running   0          2m49s
+      knative-eventing   in-memory-channel-controller-5d8986dcfb-8t8jg        1/1     Running   0          2m43s
+      knative-eventing   in-memory-channel-dispatcher-6cd8fdc44f-smrmf        2/2     Running   2          2m42s
+      knative-eventing   webhook-85d8bd7bd4-p5sxj                             1/1     Running   0          2m49s
+      knative-serving    activator-6f8b98d989-npkgm                           2/2     Running   0          3m2s
+      knative-serving    autoscaler-69f6cc479c-dz4sr                          2/2     Running   0          3m1s
+      knative-serving    controller-66f594ddf7-mwjfv                          1/1     Running   0          2m56s
+      knative-serving    webhook-546765cbbf-nt9c7                             1/1     Running   0          2m55s
+      kube-system        event-exporter-v0.2.4-5f88c66fb7-gj8wr               2/2     Running   0          11m
+      kube-system        fluentd-gcp-scaler-59b7b75cd7-75lhp                  1/1     Running   0          10m
+      kube-system        fluentd-gcp-v3.2.0-6b8sx                             2/2     Running   0          10m
+      kube-system        fluentd-gcp-v3.2.0-gwk8j                             2/2     Running   0          10m
+      kube-system        fluentd-gcp-v3.2.0-vtxff                             2/2     Running   0          10m
+      kube-system        heapster-v1.6.0-beta.1-657d484f75-cgslh              3/3     Running   0          10m
+      kube-system        kube-dns-6987857fdb-pcpc4                            4/4     Running   0          11m
+      kube-system        kube-dns-6987857fdb-v7hhg                            4/4     Running   0          10m
+      kube-system        kube-dns-autoscaler-bb58c6784-pww2k                  1/1     Running   0          10m
+      kube-system        kube-proxy-gke-pfs-demo-default-pool-6426a8ba-0jcl   1/1     Running   0          10m
+      kube-system        kube-proxy-gke-pfs-demo-default-pool-6426a8ba-0l9n   1/1     Running   0          10m
+      kube-system        kube-proxy-gke-pfs-demo-default-pool-6426a8ba-cbw5   1/1     Running   0          10m
+      kube-system        l7-default-backend-fd59995cd-jtcsp                   1/1     Running   0          11m
+      kube-system        metrics-server-v0.3.1-57c75779f-zfwmf                2/2     Running   0          10m
+      kube-system        prometheus-to-sd-2gssk                               1/1     Running   0          10m
+      kube-system        prometheus-to-sd-69lwl                               1/1     Running   0          10m
+      kube-system        prometheus-to-sd-s2vqt                               1/1     Running   0          10m
+    
     </p>
     </details>
 
-  Alternatively, on GKE you can checkout the [Workload](https://console.cloud.google.com/kubernetes/workload?workload_list_tablequery=%255B%257B_22k_22_3A_22metadata%252FclusterReference%252Fname_22_2C_22t_22_3A10_2C_22v_22_3A_22_5C_22pfs-demo_5C_22_22%257D_2C%257B_22k_22_3A_22metadata%252FclusterReference%252FgcpLocation_22_2C_22t_22_3A10_2C_22v_22_3A_22_5C_22asia-southeast1-a_5C_22_22%257D_2C%257B_22k_22_3A_22is_system_22_2C_22t_22_3A11_2C_22v_22_3A_22_5C_22false_5C_22_22_2C_22s_22_3Atrue%257D%255D&project=pa-yrampuria&folder&organizationId=265595624405&workload_list_tablesize=50) tab
+  Alternatively, on GKE you can checkout the [Workload][gcp-workload-tab] tab
   ![Workload](images/pfs-demo_workload.png)
 
 - Create a service account to push images
 
-```
+  ```
 
-> export GCP_PROJECT_ID=$(gcloud config get-value core/project)
+  > export GCP_PROJECT_ID=$(gcloud config get-value core/project)
   > gcloud projects add-iam-policy-binding $GCP_PROJECT_ID \
-
       --member serviceAccount:push-image@$GCP_PROJECT_ID.iam.gserviceaccount.com \
       --role roles/storage.admin
 
-```
+  ```
 
 - Create and fetch an `push-image` authentication key
 
-```
+  ```
 
-> gcloud iam service-accounts keys create \
-
+  > gcloud iam service-accounts keys create \
       --iam-account "push-image@$GCP_PROJECT_ID.iam.gserviceaccount.com" \
       gcr-storage-admin.json
 
-```
+  ```
 
 ### Prepare a namesapce
 
 - Prepare a namespace (default) with image push secret
 
-```
+  ```
 
-> pfs namespace init default -m pfs-download/manifest.yaml --gcr gcr-storage-admin.json
-> Initializing namespace "default"
+  > pfs namespace init default -m pfs-download/manifest.yaml --gcr gcr-storage-admin.json
+  Initializing namespace "default"
 
-Creating secret "push-credentials" with basic authentication to server "https://gcr.io" for user "\_json_key"
-Creating serviceaccount "riff-build" using secret "push-credentials" in namespace "default"
-Setting default image prefix to "gcr.io/pa-yrampuria" for namespace "default"
+  Creating secret "push-credentials" with basic authentication to server "https://gcr.io" for user "\_json_key"
+  Creating serviceaccount "riff-build" using secret "push-credentials" in namespace "default"
+  Setting default image prefix to "gcr.io/pa-yrampuria" for namespace "default"
 
-pfs namespace init completed successfully
+  pfs namespace init completed successfully
 
-```
+  ```
 
 ### Enable outbound access
 
 - To enable outbound access from your function, get cluster and service network cidr
 
-```
+  ```
 
-> gcloud container clusters describe pfs-demo \
->  --zone=asia-southeast1-a | grep -e clusterIpv4Cidr -e servicesIpv4Cidr
-> clusterIpv4Cidr: 10.48.0.0/14
-> servicesIpv4Cidr: 10.51.240.0/20
+  > gcloud container clusters describe pfs-demo \
+      --zone=asia-southeast1-a | grep -e clusterIpv4Cidr -e servicesIpv4Cidr
+  clusterIpv4Cidr: 10.48.0.0/14
+  servicesIpv4Cidr: 10.51.240.0/20
 
-```
+  ```
 
 - Edit `cm/config-network` from `knative-serving` namespace
 
-```
+  ```
 
-> kubectl edit configmap config-network --namespace knative-serving
+  > kubectl edit configmap config-network --namespace knative-serving
 
-```
+  ```
 
 - In the editor, under `data` key, put following
 
-```
+  ```
 
-istio.sidecar.includeOutboundIPRanges: "10.48.0.0/14,10.51.240.0/20"
-clusteringress.class: "istio.ingress.networking.knative.dev"
+  istio.sidecar.includeOutboundIPRanges: "10.48.0.0/14,10.51.240.0/20"
+  clusteringress.class: "istio.ingress.networking.knative.dev"
 
-```
+  ```
 
-This would make the file look like this:
+  This would make the file look like this:
 
-```
+  ```
 
-# Please edit the object below. Lines beginning with a '#' will be ignored,
+  # Please edit the object below. Lines beginning with a '#' will be ignored,
+  # and an empty file will abort the edit. If an error occurs while saving this file will be
+  # reopened with the relevant failures.
+  #
 
-# and an empty file will abort the edit. If an error occurs while saving this file will be
+  apiVersion: v1
+  data:
+  istio.sidecar.includeOutboundIPRanges: "10.48.0.0/14,10.51.240.0/20"
+  clusteringress.class: "istio.ingress.networking.knative.dev"
+  kind: ConfigMap
+  metadata:
+  annotations:
+  kubectl.kubernetes.io/last-applied-configuration: |
+  .....snip....
 
-# reopened with the relevant failures.
-
-#
-
-apiVersion: v1
-data:
-istio.sidecar.includeOutboundIPRanges: "10.48.0.0/14,10.51.240.0/20"
-clusteringress.class: "istio.ingress.networking.knative.dev"
-kind: ConfigMap
-metadata:
-annotations:
-kubectl.kubernetes.io/last-applied-configuration: |
-.....snip....
-
-```
+  ```
 
 ### Enable custom domain for Functions (Optional)
 
@@ -266,47 +258,49 @@ kubectl.kubernetes.io/last-applied-configuration: |
 - For each namespace (Example: `default`), you need to create a wildcard DNS record (Example: `*.default.functions.runs-on.cf`).
 - Get Istio ingress service's LB ip
 
-```
+  ```
 
-> kubectl get service/istio-ingressgateway -n istio-system
-> NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE
-> istio-ingressgateway LoadBalancer 10.51.254.128 35.198.200.141 80:30083/TCP,443:30555/TCP,31400:30015/TCP,15011:30222/TCP,8060:32198/TCP,853:30781/TCP,15030:32696/TCP,15031:31745/TCP 61m
+  > kubectl get service/istio-ingressgateway -n istio-system
+  NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE
+  istio-ingressgateway LoadBalancer 10.51.254.128 35.198.200.141 80:30083/TCP,443:30555/TCP,31400:30015/TCP,15011:30222/TCP,8060:32198/TCP,853:30781/TCP,15030:32696/TCP,15031:31745/TCP 61m
 
-```
+  ```
 
-In this case its `35.198.200.141`
+  In this case its `35.198.200.141`
 
-> If you are using GCP's Cloud DNS service, you can follow commands as below
->
-> ```
-> export DNS_ZONE=...
-> export ROOT_DNS_NAME=...
-> export FUNCTION_NS=default
-> export GCP_PROJECT_ID=$(gcloud config get-value core/project)
-> export LB_IP=$(kubectl get service/istio-ingressgateway -n istio-system -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
-> export NS_DNS="\*.${FUNCTION_NS}.${ROOT_DNS_NAME}."
->
-> gcloud dns --project=$GCP_PROJECT_ID record-sets transaction start --zone=$DNS_ZONE
->
-> gcloud dns --project=$GCP_PROJECT_ID record-sets transaction add $LB_IP --name="${NS_DNS}" --ttl=300 --type=A --zone=$DNS_ZONE
->
-> gcloud dns --project=$GCP_PROJECT_ID record-sets transaction execute --zone=$DNS_ZONE
-> ```
+  > If you are using GCP's Cloud DNS service, you can follow commands as below
+  >
+  > ```
+  > export DNS_ZONE=...
+  > export ROOT_DNS_NAME=...
+  > export FUNCTION_NS=default
+  > export GCP_PROJECT_ID=$(gcloud config get-value core/project)
+  > export LB_IP=$(kubectl get service/istio-ingressgateway -n istio-system -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+  > export NS_DNS="\*.${FUNCTION_NS}.${ROOT_DNS_NAME}."
+  >
+  > gcloud dns --project=$GCP_PROJECT_ID record-sets transaction start --zone=$DNS_ZONE
+  >
+  > gcloud dns --project=$GCP_PROJECT_ID record-sets transaction add $LB_IP --name="${NS_DNS}" --ttl=300 --type=A --zone=$DNS_ZONE
+  >
+  > gcloud dns --project=$GCP_PROJECT_ID record-sets transaction execute --zone=$DNS_ZONE
+  > ```
+  >
+  > **Note:** Update `DNS_ZONE`, `ROOS_DNS_NAME` and `FUNCTION_NS`.
 
 ## Run Function
 
 ### First Function: Square in Javascript
 
-Lets create a simple function that will reture square of a number. We will use code from the sample repository for this.
+Lets create a simple function that will reture square of a number. We will use code from the [sample repository](https://github.com/yogendra/pfs-node-square.git) for this.
 
 - Deploy the function
 
   ```
 
   > pfs function create square \
-  >  --git-repo https://github.com/projectriff-samples/node-square \
-  >  --artifact square.js
-  > Applied default --image="gcr.io/pa-yrampuria/square"
+    --git-repo https://github.com/yogendra/pfs-node-square.git \
+    --artifact square.js
+  Applied default --image="gcr.io/pa-yrampuria/square"
 
   pfs function create completed successfully
   Issue `pfs service status square` to see the status of the function
@@ -362,6 +356,8 @@ Lets create a simple function that will reture square of a number. We will use c
 
   ```
 
+  > **Note:** You can experience a delay in your execution on the first try
+
 - Lets create some load and see what happens
 
   ```
@@ -390,16 +386,26 @@ Lets create a simple function that will reture square of a number. We will use c
   > kubectl logs $(kubectl get pods -l riff.projectriff.io/function=square -o jsonpath='{.items[0].metadata.name}') -c user-container
   ```
 
-> **Note:** You can experience a delay in your execution on the first try
+- Lets rollout an update. First, update the source code, stage, commit and push code.
+
+- Next, update the function
+
+  ```
+  > pfs service update square
+  ```
+
+  This will pickup the latest version of the function and update the runtime. It creates a new Revision and promotes the latest version to be the serving requests.
 
 ### Second function : Uppercase in Java
+
+Now lets create a new function based on Java and Spring Boot. Repository for this code is [here](https://github.com/yogendra/pfs-java-boot-uppercase.git)
 
 - Create a function from [git repo](https://github.com/projectriff-samples/java-boot-uppercase.git)
 
   ```
 
   > pfs function create uppercase \
-      --git-repo https://github.com/projectriff-samples/java-boot-uppercase.git \
+      --git-repo https://github.com/yogendra/pfs-java-boot-uppercase.git \
       --verbose
 
   ```
@@ -549,9 +555,13 @@ So far we have only used git based project to create functions. Lets create a fu
 
   This is building your code using Cloud Native buildpacks. It detects your application type automaticaly and runs the correct buildpack.
 
--
+- Lets rollout an udpate to this function. First, update the function and add a change in the logs message.
+
+- Rollout the update```
 
 ## References
 
 - [Install PFS on GKE](https://docs.pivotal.io/pfs/0-2/install-on-gke.html)
 - [Sample Application Code]()
+
+[gcp-workload-tab]: https://console.cloud.google.com/kubernetes/workload?workload_list_tablequery=%255B%257B_22k_22_3A_22metadata%252FclusterReference%252Fname_22_2C_22t_22_3A10_2C_22v_22_3A_22_5C_22pfs-demo_5C_22_22%257D_2C%257B_22k_22_3A_22metadata%252FclusterReference%252FgcpLocation_22_2C_22t_22_3A10_2C_22v_22_3A_22_5C_22asia-southeast1-a_5C_22_22%257D_2C%257B_22k_22_3A_22is_system_22_2C_22t_22_3A11_2C_22v_22_3A_22_5C_22false_5C_22_22_2C_22s_22_3Atrue%257D%255D&project=pa-yrampuria&folder&organizationId=265595624405&workload_list_tablesize=50
