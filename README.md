@@ -102,11 +102,9 @@
   Applying resources defined in: in-memory-channel.yaml
   Applying resources defined in: riff-cnb-clusterbuildtemplate-0.2.0.yaml
   Knative components installed
+
+  pfs system install completed successfully
   ```
-
-
-    pfs system install completed successfully
-    ```
 
 - Verify installation
 
